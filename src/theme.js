@@ -1,4 +1,12 @@
 export const breakpoints = ['374px', '1204px']
+export const imageBreakpoints = {
+  "landscapemobile1x": "374w",
+  "landspacedesktop1x": "1204w"
+}
+export const avatarBreakpoints = {
+ "square1x": "374w",
+ "square2x": "1204w"
+}
 
 export default{
   "breakpoints":  breakpoints,
