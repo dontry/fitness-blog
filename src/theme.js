@@ -8,6 +8,8 @@ export const avatarBreakpoints = {
  "square2x": "1204w"
 }
 
+
+
 export default{
   "breakpoints":  breakpoints,
   "maxWidths": {
