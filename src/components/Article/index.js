@@ -4,46 +4,69 @@ import { layout, space } from "styled-system";
 import Heading from "./Heading";
 import Hero from "./Hero";
 import { getImageListSrcset } from "utils/getImgSrc";
+import player from "assets/images/player.png"
 
-const StyledContainer = styled.div`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   ${layout}
   ${space}
 `;
 
-const Body = ({ children }) => (
-  <StyledContainer maxWidth={[738]} width={[1]}>
-    {children}
-  </StyledContainer>
-);
+const AudioPlayer = styled.img`
+  margin: 0 auto;
+  ${layout}
+  ${space}
+`
 
 const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   p {
-    color: #626262;
+    font-size: 20px;
+    color: #3e3e3e;
   }
 
-  p + p {
-    margin-top: 16px;
+
+  div ~ div, div ~ img {
+    margin-top: 36px;
   }
 
   img {
+    width: 100%;
   }
 `;
 
-const StyledSummary = styled.p`
+const Summary = styled.p`
+  font-size: 22px;
   font-weight: bold;
+  line-height: 1.3;
+  color: #626262;
+  ${space}
 `;
 
 const Article = ({ article }) => {
   const { authors, title, introText, blocks, summary, imageList } = article;
   return (
     <>
-      <Hero bgImage={imageList}>
+      <Hero bgImageList={imageList}>
         <Heading title={title} subtitle={introText} author={authors[0]} />
       </Hero>
-      <Body>
-        <StyledSummary>{summary}</StyledSummary>
+      <Container>
+      <AudioPlayer src={player} alt="audio-player" width={[1]} height={[72, 123]} maxWidth={[738]} mt={[0,16 ]} />
+      <Body px={[15]} maxWidth={[738]} width={[1]} mt={[48, 52]} >
+        <Summary mb={[30]}>{summary}</Summary>
         <Content>{blocks.map(block => _renderBlock(block))}</Content>
       </Body>
+</Container>
     </>
   );
 

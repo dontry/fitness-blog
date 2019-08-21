@@ -1,22 +1,22 @@
 import { createGlobalStyle } from "styled-components";
-import EBGaramond from "./assets/fonts/EBGaramond/EBGaramond-Regular.woff2";
-import EBGaramondBold from "./assets/fonts/EBGaramond/EBGaramond-Bold.woff2";
+import EBGaramond_woff2 from "./assets/fonts/EBGaramond/EBGaramond-Regular.woff2";
+import EBGaramond_woff from "./assets/fonts/EBGaramond/EBGaramond-Regular.woff";
+import EBGaramond_ttf from "./assets/fonts/EBGaramond/EBGaramond-Regular.ttf";
+import EBGaramondBold_woff2 from "./assets/fonts/EBGaramond/EBGaramond-Bold.woff2";
+import EBGaramondBold_woff from "./assets/fonts/EBGaramond/EBGaramond-Bold.woff";
+import EBGaramondBold_ttf from "./assets/fonts/EBGaramond/EBGaramond-Bold.ttf";
 import EBGaramondItalic from "./assets/fonts/EBGaramond/EBGaramond-Italic.woff2";
 import MissionGothic from "./assets/fonts/MissionGothic/MissionGothic-Regular.woff2";
 import MissionGothicBold from "./assets/fonts/MissionGothic/MissionGothic-Bold.woff2";
 import MissionGothicItalic from "./assets/fonts/MissionGothic/MissionGothic-RegularItalic.woff2";
 
 export const GlobalStyle = createGlobalStyle`
+   
   @font-face {
     font-family: 'EBGaramond';
-    src: url(${EBGaramond}) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'EBGaramond';
-    src: url(${EBGaramondBold}) format('woff2');
+    src: url(${EBGaramondBold_woff2}) format('woff2'),
+     url(${EBGaramondBold_ttf}) format('ttf'),
+      url(${EBGaramondBold_woff}) format('woff');
     font-weight: bold;
     font-style: normal;
   }
@@ -29,12 +29,15 @@ export const GlobalStyle = createGlobalStyle`
     font-style: italic, oblique;
   }
 
-  @font-face {
-    font-family: 'MissionGothic';
-    src: url(${MissionGothic}) format('woff2');
+@font-face {
+    font-family: 'EBGaramond';
+    src: url(${EBGaramond_woff2}) format("woff2"),
+        url(${EBGaramond_woff}) format("woff"),
+        url(${EBGaramond_ttf}) format("truetype");
     font-weight: normal;
     font-style: normal;
   }
+
 
   @font-face {
     font-family: 'MissionGothic';
@@ -52,12 +55,23 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
+  @font-face {
+    font-family: 'MissionGothic';
+    src: url(${MissionGothic}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+
   html {
     box-sizing: border-box;
     font-size: 10px;
   }
   *, *:before, *:after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
   }
   body {
     padding: 0;
@@ -73,7 +87,10 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
-  p {  font-family: 'garamond'; }
+  h1, h2,h3,h4,h5,h6 {
+    font-family: "MissionGothic";
+  }
+  p {  font-family: 'EBGaramond'; }
 `;
 
 export const breakpoints = ["374px", "1204px"];
@@ -81,10 +98,17 @@ export const imageBreakpoints = {
   landscapemobile1x: "374w",
   landspacedesktop1x: "1204w"
 };
+
 export const avatarBreakpoints = {
   square1x: "374w",
   square2x: "1204w"
 };
+
+export const bgImageBreakpoints = {
+  landscape32medium1x: "1x",
+  landscape32medium2x: "2x",
+  landscape32medium3x: "3x"
+}
 
 export default {
   breakpoints: breakpoints,

@@ -34,9 +34,9 @@ storiesOf("Navigation", module).add("with title", () => (
 ));
 
 storiesOf("Hero", module)
-  .add("with bgImage", () => <Hero bgImage={bgImage} />)
+  .add("with bgImage", () => <Hero bgImageList={bgImage} />)
   .add("with heading & background image", () => (
-    <Hero bgImage={bgImage}>
+    <Hero bgImageList={bgImage}>
       <Heading
         title="the breakfast collection that you get into this spring"
         subtitle="health & well being"
@@ -44,7 +44,7 @@ storiesOf("Hero", module)
     </Hero>
   ))
   .add("with  heading, author, & background image", () => (
-    <Hero bgImage={bgImage}>
+    <Hero bgImageList={bgImage}>
       <Heading
         title="the breakfast collection that you get into this spring"
         subtitle="health & well being"

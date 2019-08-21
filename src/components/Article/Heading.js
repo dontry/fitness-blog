@@ -7,12 +7,13 @@ import { getAvatarSrcset, getImageSrc } from "utils/getImgSrc";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  letter-spacing: 1.5;
   ${flexbox}
 `;
 
 const Subtitle = styled.h4`
-margin: 0;
-text-transform: uppercase;
+  margin: 0;
+  text-transform: uppercase;
   ${layout}
   ${space}
   ${color}
@@ -20,8 +21,8 @@ text-transform: uppercase;
 `;
 
 const Title = styled.h1`
-margin: 0;
-text-transform: uppercase;
+  margin: 0;
+  text-transform: uppercase;
   ${layout}
   ${space}
   ${color}
@@ -36,7 +37,7 @@ const Heading = ({ subtitle, title = "", author, date }) => {
           fontSize={[0, 3]}
           color="white"
           textAlign={["left", "center"]}
-          mb={[3]}
+          mb={[1]}
         >
           {subtitle}
         </Subtitle>
@@ -46,7 +47,7 @@ const Heading = ({ subtitle, title = "", author, date }) => {
         color="white"
         textAlign={["left", "center"]}
         maxWidth={[810]}
-        mb={[3]}
+        mb={[1, 3]}
         lineHeight={[1.5]}
       >
         {title}
@@ -84,7 +85,7 @@ const Pic = styled.img`
   ${layout}
 `;
 
-const Role = styled.span`
+const Role = styled.h4`
   text-transform:uppercase;
   ${space}
   ${layout}
