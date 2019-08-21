@@ -103,7 +103,7 @@ const Author = ({ name, imageList, role = "GUEST AUTHOR", date }) => (
     <Pic
       width={[32, 64]}
       src={getImageSrc(imageList)}
-      srcset={getAvatarSrcset(imageList)}
+      srcSet={getAvatarSrcset(imageList)}
       alt={name}
     />
     <Role color="white">{role}</Role>
@@ -113,9 +113,9 @@ const Author = ({ name, imageList, role = "GUEST AUTHOR", date }) => (
 
 Author.propTypes = {
   name: PropTypes.string.isRequired,
-  imageList: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired
+  imageList: PropTypes.object.isRequired,
+  role: PropTypes.string,
+  date: PropTypes.string
 };
 
 export default Heading;

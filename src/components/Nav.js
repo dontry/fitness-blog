@@ -6,7 +6,7 @@ import burger from "../assets/icons/burger.svg";
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   ${space}

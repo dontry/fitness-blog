@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { layout, space } from "styled-system";
+import { layout, space, typography } from "styled-system";
 import Heading from "./Heading";
 import Hero from "./Hero";
 import { getImageListSrcset } from "utils/getImgSrc";
@@ -30,8 +30,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${typography}
   p {
-    font-size: 20px;
     color: #3e3e3e;
   }
 
@@ -46,10 +46,10 @@ const Content = styled.div`
 `;
 
 const Summary = styled.p`
-  font-size: 22px;
   font-weight: bold;
   line-height: 1.3;
   color: #626262;
+  ${typography}
   ${space}
 `;
 
@@ -61,10 +61,10 @@ const Article = ({ article }) => {
         <Heading title={title} subtitle={introText} author={authors[0]} />
       </Hero>
       <Container>
-      <AudioPlayer src={player} alt="audio-player" width={[1]} height={[72, 123]} maxWidth={[738]} mt={[0,16 ]} />
+      <AudioPlayer src={player} alt="audio-player" width={[1]} height={[72, 123]} maxWidth={[738]} mt={[0, "16px" ]} />
       <Body px={[15]} maxWidth={[738]} width={[1]} mt={[48, 52]} >
-        <Summary mb={[30]}>{summary}</Summary>
-        <Content>{blocks.map(block => _renderBlock(block))}</Content>
+        <Summary mb={[30]} fontSize={["18px", "22px"]}>{summary}</Summary>
+        <Content fontSize={["17px", "20px"]} >{blocks.map(block => _renderBlock(block))}</Content>
       </Body>
 </Container>
     </>
@@ -77,15 +77,14 @@ const Article = ({ article }) => {
           {block.content.map((image, index) => (
             <img
               key={index}
-              srcset={getImageListSrcset(image.imageList)}
+              srcSet={getImageListSrcset(image.imageList)}
               alt={image.title}
             />
-          ))}{" "}
-          />
+          ))}
         </>
       );
     } else if (block.blockTypeId === 0) {
-      return <div dangerouslySetInnerHTML={{ __html: block.content }} />;
+      return <div key={block.content} dangerouslySetInnerHTML={{ __html: block.content }} />;
     }
   }
 };

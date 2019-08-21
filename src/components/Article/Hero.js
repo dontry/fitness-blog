@@ -32,7 +32,7 @@ const Hero = ({  bgImageList, children }) => (
 );
 
 Hero.propTypes = {
-  bgImageList: PropTypes.array
+  bgImageList: PropTypes.object
 };
 
 export default Hero;

@@ -11,32 +11,16 @@ import response from "assets/article.json";
 
 createGlobalStyle(GlobalStyle);
 
-const author = {
-  name: "Centr Team",
-  imageList: {
-    square1x: {
-      url:
-        "https://cdn.centr.com/content/5000/4738/images/square1x-cen-author-pic-the-expertsv2.jpg"
-    },
-    square2x: {
-      url:
-        "https://cdn.centr.com/content/5000/4738/images/square2x-cen-author-pic-the-expertsv2.jpg"
-    },
-    square3x: {
-      url:
-        "https://cdn.centr.com/content/5000/4738/images/square3x-cen-author-pic-the-expertsv2.jpg"
-    }
-  }
-};
+const article = response.result.article
 
 storiesOf("Navigation", module).add("with title", () => (
   <Nav title="article" />
 ));
 
 storiesOf("Hero", module)
-  .add("with bgImage", () => <Hero bgImageList={bgImage} />)
+  .add("with bgImage", () => <Hero bgImageList={article.imageList} />)
   .add("with heading & background image", () => (
-    <Hero bgImageList={bgImage}>
+    <Hero bgImageList={article.imageList}>
       <Heading
         title="the breakfast collection that you get into this spring"
         subtitle="health & well being"
@@ -44,16 +28,16 @@ storiesOf("Hero", module)
     </Hero>
   ))
   .add("with  heading, author, & background image", () => (
-    <Hero bgImageList={bgImage}>
+    <Hero bgImageList={article.imageList}>
       <Heading
         title="the breakfast collection that you get into this spring"
         subtitle="health & well being"
-        author={author}
+        author={article.authors[0]}
         date="24 January 2018"
       />
     </Hero>
   ));
 
 storiesOf("Article", module).add("with all", () => (
-  <Article article={response.result.article} />
+  <Article article={article} />
 ));
