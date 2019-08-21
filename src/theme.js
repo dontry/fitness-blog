@@ -1,10 +1,10 @@
-import { createGlobalStyle} from 'styled-components'
-import EBGaramond from './assets/fonts/EBGaramond/EBGaramond-Regular.woff2'
-import EBGaramondBold from './assets/fonts/EBGaramond/EBGaramond-Bold.woff2'
-import EBGaramondItalic from './assets/fonts/EBGaramond/EBGaramond-Italic.woff2'
-import MissionGothic from './assets/fonts/MissionGothic/MissionGothic-Regular.woff2'
-import MissionGothicBold from './assets/fonts/MissionGothic/MissionGothic-Bold.woff2'
-import MissionGothicItalic from './assets/fonts/MissionGothic/MissionGothic-RegularItalic.woff2'
+import { createGlobalStyle } from "styled-components";
+import EBGaramond from "./assets/fonts/EBGaramond/EBGaramond-Regular.woff2";
+import EBGaramondBold from "./assets/fonts/EBGaramond/EBGaramond-Bold.woff2";
+import EBGaramondItalic from "./assets/fonts/EBGaramond/EBGaramond-Italic.woff2";
+import MissionGothic from "./assets/fonts/MissionGothic/MissionGothic-Regular.woff2";
+import MissionGothicBold from "./assets/fonts/MissionGothic/MissionGothic-Bold.woff2";
+import MissionGothicItalic from "./assets/fonts/MissionGothic/MissionGothic-RegularItalic.woff2";
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -76,39 +76,38 @@ export const GlobalStyle = createGlobalStyle`
   p {  font-family: 'garamond'; }
 `;
 
-export const breakpoints = ['374px', '1204px']
+export const breakpoints = ["374px", "1204px"];
 export const imageBreakpoints = {
-  "landscapemobile1x": "374w",
-  "landspacedesktop1x": "1204w"
-}
+  landscapemobile1x: "374w",
+  landspacedesktop1x: "1204w"
+};
 export const avatarBreakpoints = {
- "square1x": "374w",
- "square2x": "1204w"
-}
+  square1x: "374w",
+  square2x: "1204w"
+};
 
-
-
-export default{
-  "breakpoints":  breakpoints,
-  "maxWidths": {
-    "small": "374px",
-    "md": "1204px",
+export default {
+  breakpoints: breakpoints,
+  maxWidths: {
+    small: "374px",
+    md: "1204px"
   },
-  "fonts": {
-    "garamond": "EBGaramond",
-    "gothic": "MissionGothic",
-    "normal": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-},
-  "fontWeights": {
-    "light": 300,
-    "normal": 400,
-    "bold": 600
+  fonts: {
+    garamond: "EBGaramond",
+    gothic: "MissionGothic",
+    normal:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'
   },
-  "colors": {
-    "bodytext": "#24292e",
-    "black": "#1b1f23",
-    "white": "#fff",
-    "gray": [
+  fontWeights: {
+    light: 300,
+    normal: 400,
+    bold: 600
+  },
+  colors: {
+    bodytext: "#24292e",
+    black: "#1b1f23",
+    white: "#fff",
+    gray: [
       "#fafbfc",
       "#f6f8fa",
       "#e1e4e8",
@@ -120,7 +119,7 @@ export default{
       "#2f363d",
       "#24292e"
     ],
-    "blue": [
+    blue: [
       "#f1f8ff",
       "#dbedff",
       "#c8e1ff",
@@ -132,7 +131,7 @@ export default{
       "#032f62",
       "#05264c"
     ],
-    "green": [
+    green: [
       "#f0fff4",
       "#dcffe4",
       "#bef5cb",
@@ -144,7 +143,7 @@ export default{
       "#165c26",
       "#144620"
     ],
-    "orange": [
+    orange: [
       "#fff8f2",
       "#ffebda",
       "#ffd1ac",
@@ -156,7 +155,7 @@ export default{
       "#c24e00",
       "#a04100"
     ],
-    "purple": [
+    purple: [
       "#f5f0ff",
       "#e6dcfd",
       "#d1bcf9",
@@ -168,7 +167,7 @@ export default{
       "#3a1d6e",
       "#29134e"
     ],
-    "red": [
+    red: [
       "#ffeef0",
       "#ffdce0",
       "#fdaeb7",
@@ -180,7 +179,7 @@ export default{
       "#9e1c23",
       "#86181d"
     ],
-    "yellow": [
+    yellow: [
       "#fffdef",
       "#fffbdd",
       "#fff5b1",
@@ -192,29 +191,29 @@ export default{
       "#b08800",
       "#735c0f"
     ],
-    "state": {
-      "error": "#d73a49",
-      "failure": "#d73a49",
-      "pending": "#dbab09",
-      "queued": "#dbab09",
-      "success": "#28a745",
-      "unknown": "#959da5"
-    },
+    state: {
+      error: "#d73a49",
+      failure: "#d73a49",
+      pending: "#dbab09",
+      queued: "#dbab09",
+      success: "#28a745",
+      unknown: "#959da5"
+    }
   },
-  "borders": [0, "1px solid"],
-  "fontSizes": [12, 14, 16, 20, 24, 32, 40, 48],
-  "lineHeights": {
-    "condensedUltra": 1,
-    "condensed": 1.25,
-    "default": 1.5
+  borders: [0, "1px solid"],
+  fontSizes: [12, 14, 16, 20, 24, 32, 40, 48],
+  lineHeights: {
+    condensedUltra: 1,
+    condensed: 1.25,
+    default: 1.5
   },
-  "shadows": {
-    "small": "0 1px 1px rgba(27, 31, 35, 0.1)",
-    "medium": "0 1px 5px rgba(27, 31, 35, 0.15)",
-    "large": "0 1px 15px rgba(27, 31, 35, 0.15)",
+  shadows: {
+    small: "0 1px 1px rgba(27, 31, 35, 0.1)",
+    medium: "0 1px 5px rgba(27, 31, 35, 0.15)",
+    large: "0 1px 15px rgba(27, 31, 35, 0.15)",
     "extra-large": "0 10px 50px rgba(27, 31, 35, 0.07)",
-    "formControl": "rgba(27, 31, 35, 0.075) 0px 1px 2px inset",
-    "formControlFocus": "rgba(3, 102, 214, 0.3) 0px 0px 0px 0.2em"
+    formControl: "rgba(27, 31, 35, 0.075) 0px 1px 2px inset",
+    formControlFocus: "rgba(3, 102, 214, 0.3) 0px 0px 0px 0.2em"
   },
-  "space": [0, 4, 8, 12, 16, 24, 32, 36, 40, 48, 64, 80, 96, 112, 128]
-}
+  space: [0, 4, 8, 12, 16, 24, 32, 36, 40, 48, 64, 80, 96, 112, 128]
+};

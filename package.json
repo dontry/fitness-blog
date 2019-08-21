@@ -14,6 +14,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.js{,x}",
+    "format": "npm run prettier -- --write",
+    "prettier": "./node_modules/.bin/prettier  \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|mdx|graphql|vue)\"",
+    "validate-staged": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -32,13 +36,19 @@
       "last 1 safari version"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate-staged"
+    }
+  },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.1.11",
+    "@storybook/addon-links": "^5.1.11",
+    "@storybook/react": "^5.1.11",
     "eslint": "^6.2.0",
+    "husky": "^3.0.4",
     "lint-staged": "^9.2.3",
     "prettier": "^1.18.2",
-    "storybook": "^1.0.0",
-    "@storybook/react": "^5.1.11",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11"
+    "storybook": "^1.0.0"
   }
 }
