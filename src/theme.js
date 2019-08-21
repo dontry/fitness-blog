@@ -1,3 +1,81 @@
+import { createGlobalStyle} from 'styled-components'
+import EBGaramond from './assets/fonts/EBGaramond/EBGaramond-Regular.woff2'
+import EBGaramondBold from './assets/fonts/EBGaramond/EBGaramond-Bold.woff2'
+import EBGaramondItalic from './assets/fonts/EBGaramond/EBGaramond-Italic.woff2'
+import MissionGothic from './assets/fonts/MissionGothic/MissionGothic-Regular.woff2'
+import MissionGothicBold from './assets/fonts/MissionGothic/MissionGothic-Bold.woff2'
+import MissionGothicItalic from './assets/fonts/MissionGothic/MissionGothic-RegularItalic.woff2'
+
+export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'EBGaramond';
+    src: url(${EBGaramond}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'EBGaramond';
+    src: url(${EBGaramondBold}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'EBGaramond';
+    src: url(${EBGaramondItalic}) format('woff2');
+    font-weight: normal;
+    font-style: italic, oblique;
+  }
+
+  @font-face {
+    font-family: 'MissionGothic';
+    src: url(${MissionGothic}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MissionGothic';
+    src: url(${MissionGothicBold}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'MissionGothic';
+    src: url(${MissionGothicItalic}) format('woff2');
+    font-weight: normal;
+    font-style: italic, oblique;
+  }
+
+
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2;
+    font-family: "EBGaramond", "MissionGothic",  "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    text-decoration: none;
+  }
+  p {  font-family: 'garamond'; }
+`;
+
 export const breakpoints = ['374px', '1204px']
 export const imageBreakpoints = {
   "landscapemobile1x": "374w",

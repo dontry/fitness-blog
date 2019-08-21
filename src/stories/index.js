@@ -1,9 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import {createGlobalStyle} from 'styled-components'
 import Nav from 'components/Nav'
 import Banner from 'components/Banner'
 import Heading from 'components/Article/Heading'
 import bgImage from 'assets/images/photo-copy-2_2019-08-20/photo-copy-2.jpg'
+import {GlobalStyle} from '../theme'
+
+createGlobalStyle(GlobalStyle)
 
 
 const author = {
