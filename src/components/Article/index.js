@@ -4,13 +4,14 @@ import { layout, space, typography } from "styled-system";
 import Heading from "./Heading";
 import Hero from "./Hero";
 import { getImageListSrcset } from "utils/getImgSrc";
-import player from "assets/images/player.png"
+import player from "assets/images/player.png";
+import { TEXT_BLOCK_TYPE, IMAGE_BLOCK_TYPE } from "../constants";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Body = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const AudioPlayer = styled.img`
   margin: 0 auto;
   ${layout}
   ${space}
-`
+`;
 
 const Content = styled.div`
   display: flex;
@@ -35,8 +36,8 @@ const Content = styled.div`
     color: #3e3e3e;
   }
 
-
-  div ~ div, div ~ img {
+  div ~ div,
+  div ~ img {
     margin-top: 36px;
   }
 
@@ -61,17 +62,35 @@ const Article = ({ article }) => {
         <Heading title={title} subtitle={introText} author={authors[0]} />
       </Hero>
       <Container>
-      <AudioPlayer src={player} alt="audio-player" width={[1]} height={[72, 123]} maxWidth={[738]} mt={[0, "16px" ]} />
-      <Body px={[15]} maxWidth={[738]} width={[1]} mt={[48, 52]} >
-        <Summary mb={[30]} fontSize={["18px", "22px"]}>{summary}</Summary>
-        <Content fontSize={["17px", "20px"]} >{blocks.map(block => _renderBlock(block))}</Content>
-      </Body>
-</Container>
+        <AudioPlayer
+          src={player}
+          alt="audio-player"
+          width={[1]}
+          height={[72, 123]}
+          maxWidth={[738]}
+          mt={[0, "16px"]}
+        />
+        <Body px={[15]} maxWidth={[738]} width={[1]} mt={[48, 52]}>
+          <Summary mb={[30]} fontSize={["18px", "22px"]}>
+            {summary}
+          </Summary>
+          <Content fontSize={["17px", "20px"]}>
+            {blocks.map(block => _renderBlock(block))}
+          </Content>
+        </Body>
+      </Container>
     </>
   );
 
   function _renderBlock(block) {
-    if (block.blockTypeId === 1) {
+    if (block.blockTypeId === IMAGE_BLOCK_TYPE) {
+      return (
+        <div
+          key={block.content}
+          dangerouslySetInnerHTML={{ __html: block.content }}
+        />
+      );
+    } else if (block.blockTypeId === TEXT_BLOCK_TYPE) {
       return (
         <>
           {block.content.map((image, index) => (
@@ -83,8 +102,8 @@ const Article = ({ article }) => {
           ))}
         </>
       );
-    } else if (block.blockTypeId === 0) {
-      return <div key={block.content} dangerouslySetInnerHTML={{ __html: block.content }} />;
+    } else {
+      return <div />;
     }
   }
 };
